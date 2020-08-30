@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, createRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { padTime, getMinutes, getSeconds } from './util/helper';
 
 const Timer = ({
@@ -13,9 +13,10 @@ const Timer = ({
     const [isTimerRunnig, setIsTimerRunnig] = useState(false);
     let intervalRef = useRef(null);
     const isFirstRun = useRef(true);
-    const audioRef = createRef();
+    const audioRef = useRef(null);
   
     useEffect(() => {
+      console.log(isSessionMode)
       if (isFirstRun.current) {
         isFirstRun.current = false;
         return;
@@ -23,8 +24,8 @@ const Timer = ({
       audioRef.current.play();
     }, [isSessionMode, audioRef]);
   
-    if (timerLength === -1)
-      isSessionMode ? setTimerLength(sessionLength) : setTimerLength(breakLength);
+     if (timerLength === -1)
+       isSessionMode ? setTimerLength(breakLength) : setTimerLength(sessionLength);
   
     const startTimer = () => {
       if (intervalRef.current) {
@@ -66,7 +67,7 @@ const Timer = ({
       setSessionLength(25 * 60);
       setBreakLength(5 * 60);
     };
-  
+
     return (
       <>
         <div id="timer-label" className="timerlabel">

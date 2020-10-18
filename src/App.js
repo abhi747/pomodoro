@@ -4,8 +4,8 @@ import Timer from './components/Timer';
 import './App.css';
 
 const App = () => {
-  const [sessionLength, setSessionLength] = useState(25 * 60);
-  const [breakLength, setBreakLength] = useState(5 * 60);
+  const [sessionLength, setSessionLength] = useState(25*60);
+  const [breakLength, setBreakLength] = useState(5*60);
   const [timerLength, setTimerLength] = useState(sessionLength);
 
   const incrementLength = (mode) => {

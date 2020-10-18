@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 * {
   box-sizing: border-box;
@@ -16,15 +16,15 @@
 }
 
 body {
-  background-color: #1E555C;
+  background-color: #1e555c;
   color: #fff;
   user-select: none;
-  font-family: 'Righteous', Helvetica, Arial, sans-serif;
+  font-family: "Righteous", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

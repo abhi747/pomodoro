@@ -10,11 +10,12 @@ const Timer = ({
   setBreakLength,
 }) => {
   const [isTimerRunnig, setIsTimerRunnig] = useState(false);
+  const [timerTitle, setTimerTitle] = useState("Keep it Up!");
   let intervalRef = useRef(null);
   const isFirstRun = useRef(true);
   const audioRef = useRef(null);
 
-  const timerMode =  useRef("Session");
+  const isSessionMode =  useRef(true);
 
    useEffect(() => {
      if (isFirstRun.current) {
@@ -24,24 +25,28 @@ const Timer = ({
      audioRef.current.play().catch(console.log);
 
      if (timerLength === 0) {
-      if (timerMode.current === "Session") {
+      if (isSessionMode.current) {
         setTimerLength(breakLength);
-        timerMode.current = "Break";
+        isSessionMode.current = false;
+        setTimerTitle("Keep it Up!");
       }else {
         setTimerLength(sessionLength);
-        timerMode.current = "Session";
+        isSessionMode.current = true;
+        setTimerTitle("You are doing great!");
       }
     }
-   }, [timerMode, timerLength, sessionLength, breakLength, setTimerLength]);
+   }, [isSessionMode, timerLength, sessionLength, breakLength, setTimerLength]);
 
 
   const startTimer = () => {
     if (intervalRef.current) {
       pauseTimer();
+      setTimerTitle("Keep it Up!");
       return;
     }
 
     setIsTimerRunnig(true);
+    setTimerTitle("You are doing great!");
     intervalRef.current = setInterval(() => {
       setTimerLength((prevTimerLength) => prevTimerLength - 1);
     }, 1000);
@@ -66,7 +71,8 @@ const Timer = ({
     intervalRef.current = null;
     setIsTimerRunnig(false);
     stopAudio();
-    timerMode.current = "Session";
+    isSessionMode.current = true;
+    setTimerTitle("Ready to go another round?");
     setTimerLength(25 * 60);
     setSessionLength(25 * 60);
     setBreakLength(5 * 60);
@@ -75,7 +81,7 @@ const Timer = ({
   return (
     <>
       <div id="timer-label" className="timerlabel">
-        {timerMode.current}
+        {timerTitle}
       </div>
       <div className="timer-wrapper">
         <span id="time-left" className="time-digits">

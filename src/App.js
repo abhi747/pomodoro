@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Pomodoro Clock</h1>
+      <h1>Pomodoro</h1>
       <TimerModesControls
         {...{
           sessionLength,

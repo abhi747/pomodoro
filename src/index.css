@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 
 * {
   box-sizing: border-box;
@@ -12,14 +15,13 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
 }
 
 body {
   background-color: #1e555c;
   color: #fff;
   user-select: none;
-  font-family: "Righteous", Helvetica, Arial, sans-serif;
+  font-family: "Courier Prime", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

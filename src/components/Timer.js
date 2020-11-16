@@ -23,7 +23,6 @@ const Timer = ({
        return;
      }
      audioRef.current.play().catch(console.log);
-
      if (timerLength === 0) {
       if (isSessionMode.current) {
         setTimerLength(breakLength);

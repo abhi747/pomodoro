@@ -21,9 +21,9 @@ const Timer = ({
      if (isFirstRun.current) {
        isFirstRun.current = false;
        return;
-     }
-     audioRef.current.play().catch(console.log);
+     }    
      if (timerLength === 0) {
+      audioRef.current.play().catch(console.log);
       if (isSessionMode.current) {
         setTimerLength(breakLength);
         isSessionMode.current = false;

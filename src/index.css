@@ -21,7 +21,7 @@ body {
   background-color: #1e555c;
   color: #fff;
   user-select: none;
-  font-family: "Courier Prime", monospace;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
